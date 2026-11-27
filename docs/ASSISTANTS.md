@@ -17,7 +17,7 @@ Replace `OWNER/REPO` with the name of **your private repository**. Paste this in
 - **Standard ChatGPT GitHub connection:** [OpenAI documents it as read-only](https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt). It can help retrieve notes when available, but this connection alone cannot archive them.
 - **Other assistants, plans, and mobile surfaces:** Untested here. Require a live read, write, and read-back test before relying on them. A tool visible on desktop may not be available on a phone.
 
-If writes are unavailable, ask the assistant to draft a note in the template format, then paste it into your private repository in GitHub. The index workflow should run after the change reaches `main`.
+If writes are unavailable, ask the assistant to draft a note in the template format, then paste it into your private repository in GitHub. The index workflow should run after the change reaches the branch you edited.
 
 ## Demo conversation
 

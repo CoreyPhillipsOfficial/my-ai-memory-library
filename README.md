@@ -36,7 +36,7 @@ npm run check
 npm run index
 ```
 
-The index builder has no runtime dependencies. TypeScript and Node types are development dependencies. The workflow runs the builder after a push to `main`; its generated commit does not start another run. You can also run **Rebuild knowledge index** manually in GitHub Actions.
+The index builder has no runtime dependencies. TypeScript and Node types are development dependencies. The workflow runs the builder after a push to your repository's branch; its generated commit does not start another run. You can also run **Rebuild knowledge index** manually in GitHub Actions.
 
 ## Learn more
 

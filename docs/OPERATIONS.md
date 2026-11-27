@@ -2,9 +2,9 @@
 
 ## Index is missing or stale
 
-Check the repository's **Actions** tab for **Rebuild knowledge index**. The workflow runs after a push to `main` and can be started manually. If it failed, open the log, fix the note named in the error, and rerun it. Locally, run `npm ci` once, then `npm run index`. Until the index is fresh, read notes directly and say search may be incomplete.
+Check the repository's **Actions** tab for **Rebuild knowledge index**. The workflow runs after a push to the branch you edited and can be started manually. If it failed, open the log, fix the note named in the error, and rerun it. Locally, run `npm ci` once, then `npm run index`. Until the index is fresh, read notes directly and say search may be incomplete.
 
-If the workflow cannot push, check **Settings → Actions → General → Workflow permissions** and repository branch rules. It needs permission to commit generated index files to `main`. Do not grant broader permissions than required. If a branch rule blocks the bot, run the builder locally and submit the generated files through your normal review path.
+If the workflow cannot push, check **Settings → Actions → General → Workflow permissions** and repository branch rules. It needs permission to commit generated index files to the branch you edited. Do not grant broader permissions than required. If a branch rule blocks the bot, run the builder locally and submit the generated files through your normal review path.
 
 ## A write failed or conflicted
 

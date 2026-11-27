@@ -1,6 +1,6 @@
 # Architecture
 
-Markdown in `notes/` is the only durable knowledge store. Git provides version history. `scripts/build-index.ts` reads every note, validates a small frontmatter format, and writes deterministic JSON. GitHub Actions rebuilds the index after changes to `main`. No service, database, embeddings, or AI API is required.
+Markdown in `notes/` is the only durable knowledge store. Git provides version history. `scripts/build-index.ts` reads every note, validates a small frontmatter format, and writes deterministic JSON. GitHub Actions rebuilds the index after changes to a branch. No service, database, embeddings, or AI API is required.
 
 ## Search
 
@@ -18,6 +18,6 @@ The parser intentionally accepts a small YAML subset: one-line text values and i
 
 ## Consistency and recovery
 
-The Action fetches the latest `main`, rebuilds, and retries a rejected push. Its commit uses `GITHUB_TOKEN`, which [does not trigger another push run](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow). A failed build does not change notes or commit a new index. Local partial index writes after an I/O failure can be repaired with `npm run index`; generated files are never the source of truth. The assistant must read a saved note back and disclose if indexing is pending or failed.
+The Action fetches the latest version of the edited branch, rebuilds, and retries a rejected push. Its commit uses `GITHUB_TOKEN`, which [does not trigger another push run](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow). A failed build does not change notes or commit a new index. Local partial index writes after an I/O failure can be repaired with `npm run index`; generated files are never the source of truth. The assistant must read a saved note back and disclose if indexing is pending or failed.
 
 GitHub template repositories give each user a new repository and history rather than a fork of someone else's notes. The template contains no personal notes. A future dashboard could read Markdown and the generated index first. SQLite or PostgreSQL should only be added if interactive features require it.
