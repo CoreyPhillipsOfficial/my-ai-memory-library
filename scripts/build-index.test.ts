@@ -26,7 +26,7 @@ ${body}
 }
 
 async function fixture(): Promise<string> {
-  const root = await mkdtemp(join(tmpdir(), "my-ai-memory-library-"));
+  const root = await mkdtemp(join(tmpdir(), "folio-harbor-"));
   await mkdir(join(root, "notes"));
   return root;
 }

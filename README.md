@@ -1,12 +1,12 @@
-<img src="assets/logo.svg" alt="My AI Memory Library logo" width="64" height="64">
+<img src="assets/logo.svg" alt="Folio Harbor logo" width="64" height="64">
 
-# My AI Memory Library
+# Folio Harbor
 
 **A private library your AI can revisit.**
 
 Keep useful knowledge as Markdown files in a private GitHub repository. Ask a compatible AI assistant to save a short note after a conversation, then ask it to find that note later. The notes stay readable without the assistant, the search index, or this project.
 
-My AI Memory Library is a template and a small index builder. It does not run an AI model. Your assistant supplies the conversation; GitHub stores the notes and their history.
+Folio Harbor is a template and a small index builder. It does not run an AI model. Your assistant supplies the conversation; GitHub stores the notes and their history.
 
 ## Start here
 
