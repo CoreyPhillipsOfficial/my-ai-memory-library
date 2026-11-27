@@ -1,0 +1,14 @@
+{
+  "name": "open-memory-shelf",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "index": "node --experimental-strip-types scripts/build-index.ts",
+    "check": "tsc --noEmit && node --experimental-strip-types --test scripts/build-index.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "typescript": "5.8.3"
+  }
+}
