@@ -17,6 +17,16 @@ Replace `OWNER/REPO` with the name of **your private repository**. Paste this in
 - **Standard ChatGPT GitHub connection:** [OpenAI documents it as read-only](https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt). It can help retrieve notes when available, but this connection alone cannot archive them.
 - **Other assistants, plans, and mobile surfaces:** Untested here. Require a live read, write, and read-back test before relying on them. A tool visible on desktop may not be available on a phone.
 
+## Write access without a paid service
+
+The simplest route is an assistant with a GitHub connection that can edit files in **only your private library**. Check its available tools before you grant access. This repository's Codex connection was tested with a create, read-back, update, and stale-SHA conflict. That result does not transfer to every account.
+
+If your assistant only reads GitHub, let it draft a note and save the draft yourself in GitHub's web editor. This is free and keeps the write decision with you. Then ask the assistant to retrieve it in a new conversation.
+
+For an MCP-capable assistant, [GitHub's official MCP server](https://github.com/github/github-mcp-server) offers file write tools. This route is **documented but not tested with this template**. Restrict the underlying GitHub credential to the single private library, give it only the contents permissions it needs, and keep the credential in your assistant's secret storage. Do not paste a token into a chat or note. A read-only MCP configuration cannot archive notes.
+
+You can also clone your private library and use a local coding assistant to edit and push Markdown files. This is a familiar Git workflow for technical users, but it adds setup. Test a harmless note before relying on any of these routes. [GitHub's fine-grained token guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) explains repository-specific permissions.
+
 If writes are unavailable, ask the assistant to draft a note in the template format, then paste it into your private repository in GitHub. The index workflow should run after the change reaches the branch you edited.
 
 ## Demo conversation

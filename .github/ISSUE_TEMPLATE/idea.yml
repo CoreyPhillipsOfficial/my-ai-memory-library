@@ -1,0 +1,16 @@
+name: Improvement idea
+description: Suggest a small change that solves a real problem.
+title: "Idea: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What task was difficult?
+      description: Do not include private notes or account information.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would make it easier?

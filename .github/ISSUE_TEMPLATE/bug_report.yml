@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a problem with setup, indexing, or retrieval.
+title: "Bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Use fictional or redacted examples. Never attach private notes, tokens, or conversation transcripts."
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we reproduce it with fictional data?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Release or commit
