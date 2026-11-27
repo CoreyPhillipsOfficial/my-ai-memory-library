@@ -231,7 +231,7 @@ export async function buildIndex(root: string): Promise<void> {
     await mkdir(resolve(target, ".."), { recursive: true });
     await writeFile(target, value);
   }
-  for (const file of stale) if (!output.has(relative(root, file).split("\\").join("/"))) await rm(file);
+  for (const file of stale) if (!output.has(relative(root, file).split("\\").join("/"))) await rm(file, { force: true });
   await writeFile(join(root, "index.json"), output.get("index.json")!);
 }
 

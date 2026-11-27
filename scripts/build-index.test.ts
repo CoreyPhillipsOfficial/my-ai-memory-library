@@ -134,3 +134,20 @@ test("symlinks cannot pull outside notes into the index or redirect generated wr
     await assert.rejects(buildIndex(root), /not a symlink/);
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+test("concurrent rebuilds settle on current notes and recover after a deletion", async () => {
+  const root = await fixture();
+  try {
+    await writeNote(root, "moonlight-library");
+    await buildIndex(root);
+    await writeNote(root, "moonlight-library", note("moonlight-library", "A silver compass points north."));
+    await writeNote(root, "sky-map", note("sky-map", "A paper atlas shows Orion."));
+    await Promise.all([buildIndex(root), buildIndex(root)]);
+    assert.equal((await indexJson(root, "index.json") as { note_count: number }).note_count, 2);
+    assert.ok((await indexJson(root, "index/terms/or.json") as Record<string, string[]>).orion);
+    await rm(join(root, "notes/sky-map.md"));
+    await buildIndex(root);
+    assert.equal((await indexJson(root, "index.json") as { note_count: number }).note_count, 1);
+    await assert.rejects(readFile(join(root, "index/terms/or.json"), "utf8"), { code: "ENOENT" });
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
