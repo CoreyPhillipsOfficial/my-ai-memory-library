@@ -1,12 +1,14 @@
-<img src="assets/logo.svg" alt="Folio Harbor logo" width="64" height="64">
+<img src="assets/logo.svg" alt="My AI Memory Library logo" width="64" height="64">
 
-# Folio Harbor
+# My AI Memory Library
+
+[![Check](https://github.com/CoreyPhillipsOfficial/my-ai-memory-library/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/CoreyPhillipsOfficial/my-ai-memory-library/actions/workflows/check.yml)
 
 **A private library your AI can revisit.**
 
 Keep useful knowledge as Markdown files in a private GitHub repository. Ask a compatible AI assistant to save a short note after a conversation, then ask it to find that note later. The notes stay readable without the assistant, the search index, or this project.
 
-Folio Harbor is a template and a small index builder. It does not run an AI model. Your assistant supplies the conversation; GitHub stores the notes and their history.
+My AI Memory Library is a template and a small index builder. It does not run an AI model. Your assistant supplies the conversation; GitHub stores the notes and their history.
 
 ## Start here
 
@@ -35,6 +37,8 @@ The index covers titles, summaries, topics, keywords, and note bodies. It uses e
 With Node 22 or newer:
 
 ```sh
+git clone https://github.com/CoreyPhillipsOfficial/my-ai-memory-library.git
+cd my-ai-memory-library
 npm ci
 npm run check
 npm run index
